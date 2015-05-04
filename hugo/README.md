@@ -1,10 +1,10 @@
-# fbrx/hugo
+# ybarg/hugo
 
 ## Description
 
 This is a base image for working with Hugo - a fast and modern static website engine. It can either be used to run arbitrary Hugo commands for your project or as a base image for your custom container.
 
-The default entrypoint runs the plain ```hugo```command. Via command parameters the command which should be used to run Hugo can be selected and parameterized. For example running ```docker run ... fbrx/hugo server -D -F``` will result in running ```hugo server -D -F``` inside the container.
+The default entrypoint runs the plain ```hugo```command. Via command parameters the command which should be used to run Hugo can be selected and parameterized. For example running ```docker run ... ybarg/hugo server -D -F``` will result in running ```hugo server -D -F``` inside the container.
 
 ## Usage
 
@@ -33,7 +33,7 @@ basePath/
 A sample Dockerfile may look like follows:
 
 ```
-FROM fbrx/hugo
+FROM ybarg/hugo
 MAINTAINER me
 
 # customizes the default command when the container is run. The arguments will be supplied to the hugo command.
@@ -58,12 +58,12 @@ When run, the image expects a Hugo site structure at ```/site```. When used as a
 
 When the image is used "standalone", the folder which should be used has to be specified via the ```-v``` flag to the ```docker run``` command.
 
-Example to use the current directory: ```docker run --rm -p 1313:1313 -v ${PWD}:/site fbrx/hugo```
+Example to use the current directory: ```docker run --rm -p 1313:1313 -v ${PWD}:/site ybarg/hugo```
 
 ## boot2docker
 
 When the image is used to run your site via ```hugo server``` in conjunction with boot2docker, you have to supply the IP or hostname of your boot2docker host  as the baseUrl to the hugo command.
 
-Example: ```docker run --rm -p 1313:1313 -v ${PWD}:/site fbrx/hugo server -b 192.168.59.103```
+Example: ```docker run --rm -p 1313:1313 -v ${PWD}:/site ybarg/hugo server -b 192.168.59.103```
 
 The IP of the boot2docker host can be obtained by simply running ```boot2docker ip```.
