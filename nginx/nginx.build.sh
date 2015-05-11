@@ -2,7 +2,7 @@
 
 # configure script for nginx
 # must be run with path to nginx src as parameter.
-#   example: nginx.configure.sh /path/to/nginx-1.7.9/
+#   example: nginx.configure.sh /path/to/nginx-1.9.0/
 
 # use nginx directory as base, since required by configure script
 echo running nginx configure with base path: $1
@@ -16,12 +16,12 @@ cd $1
     --conf-path=/etc/nginx/nginx.conf \
     --pid-path=/run/nginx.pid \
     --sbin-path=/usr/sbin/nginx \
-    --with-debug \
+    # --with-debug \
     --with-http_ssl_module \
-    --with-pcre=/work/pcre-8.35 \
+    # --with-pcre=/work/pcre2-10.10 \
     --with-zlib=/work/zlib-1.2.8 \
-    --with-openssl=/work/openssl-1.0.2 \
-    --with-http_spdy_module \
-    --add-module=/work/nginx-auth-ldap/
+    --with-openssl=/work/openssl-1.0.2a \
+    # --with-http_spdy_module/
+    # --add-module=/work/nginx-auth-ldap/
 
 make install
