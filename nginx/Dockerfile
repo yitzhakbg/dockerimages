@@ -3,7 +3,16 @@ MAINTAINER Yitzhak Bar Geva <yitzhakbargeva@gmail.com>
 
 
 # install prerequisites
-RUN apt-get update && apt-get install wget git build-essential libldap2-dev libssl-dev libpcre3-dev -y
+RUN apt-get update && apt-get install -y wget && \
+    git && \
+    build-essential && \
+    libldap2-dev && \
+    libssl-dev && \
+    libpcre3-dev && \
+    multiarch-support && \
+    libdebconfclient0 && \
+    libc6 && \
+    awk
 
 WORKDIR /work
 
