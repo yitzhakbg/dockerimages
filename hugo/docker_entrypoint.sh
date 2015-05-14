@@ -5,8 +5,8 @@
 
 # Check for no arguments -> run default
 if [[ $# -eq 0 ]]; then
-  echo hugo -w -t redlounge -d /usr/local/nginx/html/
-  exec hugo -w -t redlounge -d /usr/local/nginx/html/
+  echo hugo -w -t redlounge -d /var/www/levpoem/public
+  exec hugo -w -t redlounge -d var/www/levpoem/public
 fi
 
 # Regexs for checking commands
