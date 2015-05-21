@@ -1,0 +1,1 @@
+openssl req -new -newkey rsa:2048 -nodes -out star_levpoem_co_il.csr -keyout star_levpoem_co_il.key -subj "/C=IL/ST=Israel/L=Beit El/O=Yitzhak Bar Geva/CN=*.levpoem.co.il"
