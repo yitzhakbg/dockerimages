@@ -1,12 +1,15 @@
 #!/bin/bash
 
+# DefaultDir=/var/www/levpoem.co.il
+DefaultDir=/var/www/$SITE
+DefaultCmd="hugo -t redlounge -d $DefaultDir"
 #remove possibly existing site
 # rm -rf /site/public/*
 
 # Check for no arguments -> run default
 if [[ $# -eq 0 ]]; then
-  echo hugo -w -t redlounge -d /var/www/levpoem/public
-  exec hugo -w -t redlounge -d var/www/levpoem/public
+echo $DefaultCmd
+exec $DefaultCmd
 fi
 
 # Regexs for checking commands
