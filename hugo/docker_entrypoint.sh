@@ -2,7 +2,9 @@
 
 # DefaultDir=/var/www/levpoem.co.il
 DefaultDir=/var/www/$SITE
-DefaultCmd="hugo -t redlounge -d $DefaultDir"
+# DefaultCmd="hugo -t redlounge -d $DefaultDir"
+# DefaultCmd="hugo server -w -t redlounge -d $DefaultDir -b http://$SITE --appendPort=false --disableLiveReload"
+DefaultCmd="hugo server -s /site -w -t redlounge -d /var/www/levpoem.co.il --appendPort=false -v -b http://levpoem.co.il --bind=0.0.0.0 --disableLiveReload"
 #remove possibly existing site
 # rm -rf /site/public/*
 
